@@ -6,7 +6,7 @@ RUN apt-get update && \
     
 RUN pip install django
 RUN git clone https://github.com/liuzheng712/webTeX --depth 1 /opt/webTeX
-RUN wget http://mirrors.ctan.org/systems/texlive/Images/texlive2014-20140525.iso && \
+RUN wget -q http://mirrors.ctan.org/systems/texlive/Images/texlive2014-20140525.iso && \
     mkdir /tmp/texlive && \
     7z x /texlive*.iso -o/tmp/texlive/ && \
     chmod +x /tmp/texlive/install-tl && \
