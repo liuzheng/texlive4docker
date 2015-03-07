@@ -19,3 +19,6 @@ ENV HOME /root
 
 # Define working directory.
 WORKDIR /root
+
+RUN apt-get -qqy install tree
+RUN tree /usr/local/texlive > /root/texlive
