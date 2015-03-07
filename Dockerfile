@@ -12,7 +12,8 @@ RUN wget -q http://mirrors.ctan.org/systems/texlive/Images/texlive2014-20140525.
     chmod +x /tmp/texlive/install-tl && \
     cd /tmp/texlive && expect -c "spawn ./install-tl; expect Enter; send -- \"I\r\"; expect eof " && \
     rm /tmp/texlive -fr && \
-    rm /texlive*.iso
+    rm /texlive*.iso && \
+    cd /usr/local/texlive && find -name *.pdf | awk '{print "rm "$1 }'|sh
 
 # Set environment variables.
 ENV HOME /root
