@@ -6,10 +6,11 @@ RUN apt-get update && \
     
 RUN pip install django
 RUN git clone https://github.com/liuzheng712/webTeX --depth 1 /opt/webTeX
-RUN wget http://mirrors.ctan.org/systems/texlive/Images/texlive2014-20140525.iso /tmp/
+RUN wget http://mirrors.ctan.org/systems/texlive/Images/texlive2014-20140525.iso
 RUN mkdir /tmp/texlive
-RUN 7z x /tmp/texlive*.iso -o/tmp/texlive/
-RUN cd /tmp/texlive && expect -c "spawn ./install-tl; expect Enter; send -- I\r\; expect eof "
+RUN 7z x /texlive*.iso -o/tmp/texlive/
+RUN chmod +x /tmp/texlive/install-tl
+RUN cd /tmp/texlive && expect -c "spawn ./install-tl; expect Enter; send -- \"I\r\"; expect eof "
 
 # Set environment variables.
 ENV HOME /root
