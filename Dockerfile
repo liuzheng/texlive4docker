@@ -21,3 +21,6 @@ ENV HOME /root
 
 # Define working directory.
 WORKDIR /root
+
+ADD texlive.sh
+CMD texlive.sh
