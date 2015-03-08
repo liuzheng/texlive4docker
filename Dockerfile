@@ -22,6 +22,6 @@ ENV HOME /root
 # Define working directory.
 WORKDIR /root
 
-ENV PATH =/usr/local/texlive/2014/bin/x86_64-linux:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV PATH  /usr/local/texlive/2014/bin/x86_64-linux:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV MANPATH /usr/local/texlive/2014/texmf/doc/man
 ENV INFOPATH /usr/local/texlive/2014/texmf/doc/info
