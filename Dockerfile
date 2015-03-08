@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER liuzheng "liuzheng712@gmail.com"
 
 RUN apt-get update && \
-    apt-get install -qqy wget git python-dev python-pip p7zip-full expect
+    apt-get install -qqy wget git python-dev python-pip p7zip-full expect libfontconfig1 
     
 RUN pip install django
 RUN git clone https://github.com/liuzheng712/webTeX --depth 1 /opt/webTeX
@@ -22,5 +22,6 @@ ENV HOME /root
 # Define working directory.
 WORKDIR /root
 
-ADD texlive.sh
-CMD texlive.sh
+ENV PATH =/usr/local/texlive/2014/bin/x86_64-linux:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV MANPATH /usr/local/texlive/2014/texmf/doc/man
+ENV INFOPATH /usr/local/texlive/2014/texmf/doc/info
