@@ -1,3 +1,3 @@
-FROM liuzheng712/texlive2014
+FROM liuzheng712/texlive
 MAINTAINER liuzheng "liuzheng712@gmail.com"
 
