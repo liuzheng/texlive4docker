@@ -5,9 +5,9 @@ RUN apt-get update && \
     apt-get install -qqy wget python-dev python-pip p7zip-full expect libfontconfig1 
     
 RUN pip install django
-RUN wget -q http://mirrors.ctan.org/systems/texlive/Images/texlive2014-20140525.iso && \
+RUN wget -q http://mirrors.ctan.org/systems/texlive/Images/texlive.iso && \
     mkdir /tmp/texlive && \
-    7z x /texlive*.iso -o/tmp/texlive/ && \
+    7z x /texlive.iso -o/tmp/texlive/ && \
     chmod +x /tmp/texlive/install-tl && \
     cd /tmp/texlive && expect -c "spawn ./install-tl; set timeout -1; expect Enter; send -- \"I\r\"; expect eof " && \
     rm /tmp/texlive -fr && \
